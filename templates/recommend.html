@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Recommendations</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container">
+    <div class="jumbotron text-center">
+      <h1>{{title}} </h1>
+
+      {% if movie_name: %}
+           <h4>Choosing the highest rated movie,</h4> <br>
+           <p>Similar ratings to - {{movie_name}}</p>
+      {% endif %}
+      {% if similar_user: %}
+           <p>User who has similar preferences - {{similar_user}}</p>
+      {% endif %}
+      <h4>Movie recommendations are: <br> {{rec1}}{% if rating_1: %} which user {{similar_user}} rated {{rating_1}} {% endif %} <br> {{rec2}} {% if rating_2: %} which user {{similar_user}} rated {{rating_2}} {% endif %} <br> {{rec3}}  {% if rating_3: %} which user {{similar_user}} rated {{rating_3}} {% endif %}<br> {{rec4}}  {% if rating_4: %} which user {{similar_user}} rated {{rating_4}} {% endif %}<br> {{rec5}} {% if rating_5: %} which user {{similar_user}} rated {{rating_5}} {% endif %} </h4>
+    </div>
+  </div>
+</body>
+
+</html>

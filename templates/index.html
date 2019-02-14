@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Movie Recommendations</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body bgcolor="222222">
+  <div class="container">
+    <div class="jumbotron text-center">
+      <h1>Enter movie ratings: </h1>
+    </div>
+
+    <br><br>
+
+    <form class = "container" method="POST">
+        <div class="form-group">
+
+        <br>
+        <label for="rating1">Rating for {{pred1}}</label>
+        <select id="rating1" name="rating1">
+          <option value=0>0</option>
+          <option value=1>1</option>
+          <option value=2 selected="selected">2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+          <option value=5>5</option>
+        </select>
+        <br>
+        <label for="rating2">Rating for {{pred2}}</label>
+        <select id="rating2" name="rating2">
+          <option value=0>0</option>
+          <option value=1>1</option>
+          <option value=2 selected="selected">2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+          <option value=5>5</option>
+        </select>
+        <br>
+        <label for="rating3">Rating for {{pred3}}</label>
+        <select id="rating3" name="rating3">
+          <option value=0>0</option>
+          <option value=1>1</option>
+          <option value=3 selected="selected">2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+          <option value=5>5</option>
+        </select>
+        <br>
+        <label for="rating4">Rating for {{pred4}}</label>
+        <select id="rating4" name="rating4">
+          <option value=0>0</option>
+          <option value=1>1</option>
+          <option value=2 selected="selected">2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+          <option value=5>5</option>
+        </select>
+        <br>
+        <label for="rating5">Rating for {{pred5}}</label>
+        <select id="rating5" name="rating5">
+          <option value=0>0</option>
+          <option value=1>1</option>
+          <option value=2 selected="selected">2</option>
+          <option value=3>3</option>
+          <option value=4>4</option>
+          <option value=5>5</option>
+        </select>
+        <select hidden="true" id="id1" name="id1">
+          <option value={{name1}} selected="selected">name1</option>
+        </select>
+        <select hidden="true" id="id2" name="id2">
+          <option value={{name2}} selected="selected">name2</option>
+        </select>
+        <select hidden="true" id="id3" name="id3">
+          <option value={{name3}} selected="selected">name3</option>
+        </select>
+        <select hidden="true" id="id4" name="id4">
+          <option value={{name4}} selected="selected">name4</option>
+        </select>
+        <select hidden="true" id="id5" name="id5">
+          <option value={{name5}} selected="selected">name5</option>
+        </select>
+          <br>
+          <br>
+          <br>
+          <div class = "well">
+        <input class="btn btn-info" type="submit" formaction="/get-user-data-item" value="Get item-item recommendation">
+        <br>
+        <br>
+        <input class="btn btn-info" type="submit" formaction="/get-user-data-user" value="Get user-user recommendation">
+        <br>
+        <br>
+        <input class="btn btn-info" type="submit" formaction="/get-user-data-matrix" value="Get matrix-decomposition recommendation">
+        </div>
+        </div>
+        </form>
+  </div>
+</body>
+
+</html>
