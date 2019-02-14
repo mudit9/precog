@@ -6,13 +6,13 @@ Technologies used: Flask 0.12.2, Python, pandas, scipy
 ## How to start up app
 
 
-2. Install all dependencies using requirements.txt
+1. Install all dependencies using requirements.txt
 
 ```
 $  pip install -r requirements.txt
 ```
 
-3. Start app
+2. Start app
 
 ```
 $  python app.py
@@ -26,8 +26,11 @@ To extract the IMDB data of the movies, a web scraper was used. For each genre, 
 df = pd.read_csv('imdb.csv')
 df
 ```
-
 ![IMDB](/screenshots/imbd.png?raw=true)
+
+To generate the dummy data for the user ratings, 999 random users were created and each user gave 20 random movies a random rating out from 1 to 5.
+
+![UserData](/screenshots/user_rating.png?raw=true)
 
 
 ### 2. Data Processing
@@ -45,6 +48,44 @@ And exporting the mondoDB database to a csv file:
 ![MongoDB-Export](/screenshots/mongoDB_export.png?raw=true)
 
 #### User Data
-Further to generate the dummy data for the user ratings, 999 random users were created and each user gave a random movie a random rating out 1 to 5.
 
-![UserData](/screenshots/user_rating.png?raw=true)
+Tuples where a user has rated the same movie twice or more than twice were removed from the dataset.
+
+#### Movie-User Data
+
+A dataframe where all the movies are on the x axis and all the users on the y axis and each column represents the movies vector i.e the movie-user[i][j] is the value which the Ith user has given to jth movie.
+
+![User-Movie Data](/screenshots/userUser_matrixUtility.png?raw=true)
+
+#### User-Movie Data
+
+A dataframe where all the users are on the x axis and all the movies on the y axis and each column represents the user vector i.e the movie-user[i][j] is the value which the jth user has given to ith movie.
+
+![Movie-User Data](/screenshots/movie_user.png?raw=true)
+
+### 3. Collaborative Filtering
+
+```
+Idea: If a person A likes item 1, 2, 3 and B like 2,3,4 then they have similar interests and A should like item 4 and B should like item 1.
+```
+
+The co-efficient I have used to calculate similarity between 2 vectors is Pearson similarity Co-efficient which is given by the formula:
+
+![pearson](/screenshots/pearson.png?raw=true)
+
+Pandas library in python has a builtin function ``corrwith()`` which calculates the pearson correlation between 2 vectors.
+
+#### Item-Item
+
+In item-item collaborative filtering, we recommend movies which have been rated similarly to the movies which have been rated high by the new user.
+In my approach, if the new user has rated all movies poorly, (s)he'd be recommended movies which have the highest IMDB ratings.
+For step-by-step explanation, follow comments.
+
+![Item-Item Collaborative Filtering](/screenshots/itemitem.png?raw=true)
+
+#### User-user_rating
+
+Here we find users which are alike(based on similarity) and recommend movies which the new user's look alike has rated high in past.
+
+
+![User-User Collaborative Filtering](/screenshots/user_user.png?raw=true)
