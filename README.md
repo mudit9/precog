@@ -86,6 +86,8 @@ For step-by-step explanation, follow comments.
 #### User-user_rating
 
 Here we find users which are alike(based on similarity) and recommend movies which the new user's look alike has rated high in past.
-
+First, the most similar user is found out using pearson similarity coefficient and then the top most rated movies of the most similar movies are retrieved. If there is any movie in the recommended movies list which has already been rated by the new user, it is removed from the recommended movies list.
 
 ![User-User Collaborative Filtering](/screenshots/user_user.png?raw=true)
+
+#### Matrix Decomposition
