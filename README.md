@@ -55,7 +55,7 @@ Tuples where a user has rated the same movie twice or more than twice were remov
 
 A dataframe where all the movies are on the x axis and all the users on the y axis and each column represents the movies vector i.e the movie-user[i][j] is the value which the Ith user has given to jth movie.
 
-![User-Movie Data](/screenshots/userUser_matrixUtility.png?raw=true)
+![User-Movie Data](/screenshots/userUser_matrixUtlity.png?raw=true)
 
 #### User-Movie Data
 
