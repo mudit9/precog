@@ -33,6 +33,7 @@ df
 ##2. Data Processing
 After scraping data for 300 movies in IMDB, duplicate movies were removed. The movies dataset now had 193 unique movies.
 To store the movie instances into a MongoDB collection named 'moviedata', python's pyMongo library was used.
+
 ![MongoDB-Import](/screenshots/mongodb_import.png?raw=true)
 
 And exporting the mondoDB database to a csv file:
