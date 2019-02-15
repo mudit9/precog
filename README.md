@@ -1,5 +1,7 @@
 # Movie Recommendation System
 
+Precog task by - Mudit Saxena (Shiv Nadar University)
+
 The Webapp is deployed on heroku: https://precog-movierecommender.herokuapp.com/
 
 Technologies used: Flask, Python, Pandas, Numpy, Scipy, MongoDB, Docker
