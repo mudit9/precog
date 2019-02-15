@@ -43,7 +43,7 @@ To generate the dummy data for the user ratings, 999 random users were created a
 ![UserData](/screenshots/user_rating.png?raw=true)
 
 
-### 2. Data Processing
+### 2. Data Pre-processing
 
 #### IMDB data
 After scraping data for 300 movies in IMDB, duplicate movies were removed. The movies dataset now had 193 unique movies.
@@ -106,7 +106,7 @@ For step-by-step explanation, follow comments.
 
 ![Item-Item Collaborative filtering](/screenshots/itemitem.png?raw=true)
 
-### User-user_rating
+### User-User 
 
 Here we find users which are alike(based on similarity) and recommend movies which the most similar user to the new user has rated high before.
 First, the most similar user is found out using pearson similarity coefficient and then the top most rated movies of the most similar movies are retrieved. If there is any movie in the recommended movies list which has already been rated by the new user, it is removed from the recommended movies list.
@@ -122,7 +122,7 @@ For step-by-step explanation, follow comments.
 ![Matrix Decomposition](/screenshots/MatrixDecomposition.png?raw=true)
 
 
-### Docker
+### 4. Docker
 
 The DockerFile with the OS Ubuntu 16.04 has been added to the repository.
 
