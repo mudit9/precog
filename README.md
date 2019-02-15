@@ -6,6 +6,9 @@ The Webapp is deployed on heroku: https://precog-movierecommender.herokuapp.com/
 
 Technologies used: Flask, Python, Pandas, Numpy, Scipy, MongoDB, Docker
 
+![heroku](/screenshots/heroku.png?raw=true)
+
+
 ## How to start up app
 
 1. Install all dependencies using requirements.txt
