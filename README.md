@@ -102,7 +102,7 @@ In item-item collaborative filtering, we recommend movies which have been rated 
 In my approach, if the new user has rated all movies poorly, (s)he'd be recommended movies which have the highest IMDB ratings.
 For step-by-step explanation, follow comments.
 
-![Item-Item Collaborative Filtering](/screenshots/itemitem.png?raw=true)
+![Item-Item Collaborative filtering](/screenshots/itemitem.png?raw=true)
 
 #### User-user_rating
 
