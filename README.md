@@ -28,7 +28,7 @@ $  python app.py
 ## Methodology
 
 ### 1. Data Extraction
-To extract the IMDB data of the movies, a web scraper was used. For each genre, (action, comedy, drama, sci-fi, animation, thriller) 50 movies were scraped. Movie details (Name, Year of release, Rating, Genre, IMDB_Url, votes) were scraped off the IMDB sort by genre page. Code can be found in [DataExtraction.ipynb](../Python Notebooks/DataExtraction.ipynb).
+To extract the IMDB data of the movies, a web scraper was used. For each genre, (action, comedy, drama, sci-fi, animation, thriller) 50 movies were scraped. Movie details (Name, Year of release, Rating, Genre, IMDB_Url, votes) were scraped off the IMDB sort by genre page. Code can be found in [DataExtraction.ipynb](/py_notebooks/DataExtraction.ipynb)
 Note - TV series is being treated as movies only.
 
 ```
@@ -119,7 +119,7 @@ For step-by-step explanation, follow comments.
 In Matrix Decomposition using singular value decomposition the formula used is: R=UΣV <sup>T</sup> where R is the user_rating matrix, U is the user matrix, Σ is the diagonal matrix with singular values and V<sup>T</sup> is the movie matrix.
 For step-by-step explanation, follow comments.
 
-![Matrix Decomposition](/screenshots/MatrixDecomposition.png?raw=true)
+![Matrix Decomposition](/screenshots/matrixdecomposition.png?raw=true)
 
 
 ### 4. Docker
