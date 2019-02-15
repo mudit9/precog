@@ -101,7 +101,7 @@ For example:
 
 ### Item-Item
 
-In item-item collaborative filtering, we recommend movies which have been rated similarly to the movies which have been rated high by the new user.
+In item-item collaborative filtering, we recommend movies which have been rated similarly to the movies which have been rated high by the new user. Here, I have first found out which movie has been rated the highest by the new user. By taking that movie into consideration, 5 most similar movies are recommended.
 In my approach, if the new user has rated all movies poorly, (s)he'd be recommended movies which have the highest IMDB ratings.
 For step-by-step explanation, follow comments.
 
