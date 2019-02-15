@@ -80,16 +80,21 @@ def predict_stuff_item():
     movies_data = pd.read_csv('Movies.csv')
     user_rating = pd.read_csv('User_rating.csv')
     if request.method == 'POST':
+        n1 = request.form.get('id1')
+        n2 = request.form.get('id2')
+        n3 = request.form.get('id3')
+        n4 = request.form.get('id4')
+        n5 = request.form.get('id5')
         rating1 = request.form.get('rating1')
-        user_rating = user_rating.append({'UserID': 1000, 'MovieID': movieids[0], 'Rated': rating1}, ignore_index=True)
+        user_rating = user_rating.append({'UserID': 1000, 'MovieID': int(n1), 'Rated': rating1}, ignore_index=True)
         rating2 = request.form.get('rating2')
-        user_rating = user_rating.append({'UserID': 1000, 'MovieID': movieids[1], 'Rated': rating2}, ignore_index=True)
+        user_rating = user_rating.append({'UserID': 1000, 'MovieID': int(n2), 'Rated': rating2}, ignore_index=True)
         rating3 = request.form.get('rating3')
-        user_rating = user_rating.append({'UserID': 1000, 'MovieID': movieids[2], 'Rated': rating3}, ignore_index=True)
+        user_rating = user_rating.append({'UserID': 1000, 'MovieID': int(n3), 'Rated': rating3}, ignore_index=True)
         rating4 = request.form.get('rating4')
-        user_rating = user_rating.append({'UserID': 1000, 'MovieID': movieids[3], 'Rated': rating4}, ignore_index=True)
+        user_rating = user_rating.append({'UserID': 1000, 'MovieID': int(n4), 'Rated': rating4}, ignore_index=True)
         rating5 = request.form.get('rating5')
-        user_rating = user_rating.append({'UserID': 1000, 'MovieID': movieids[4], 'Rated': rating5}, ignore_index=True)
+        user_rating = user_rating.append({'UserID': 1000, 'MovieID': int(n5), 'Rated': rating5}, ignore_index=True)
                 #USER USER1
         movie_data = pd.merge(movies_data,user_rating, on='MovieID') #merge the 2DFs
         movie_user_rating=(movie_data.pivot_table(index= 'Name',columns='UserID',values='Rated',aggfunc='first')
@@ -121,19 +126,23 @@ def predit_stuff_matrix():
     movies_data = pd.read_csv('Movies.csv')
     user_rating = pd.read_csv('User_rating.csv')
     if request.method == 'POST':
+        n1 = request.form.get('id1')
+        n2 = request.form.get('id2')
+        n3 = request.form.get('id3')
+        n4 = request.form.get('id4')
+        n5 = request.form.get('id5')
         rating1 = request.form.get('rating1')
-        user_rating = user_rating.append({'UserID': 1000, 'MovieID': movieids[0], 'Rated': rating1}, ignore_index=True)
+        user_rating = user_rating.append({'UserID': 1000, 'MovieID': int(n1), 'Rated': rating1}, ignore_index=True)
         rating2 = request.form.get('rating2')
-        user_rating = user_rating.append({'UserID': 1000, 'MovieID': movieids[1], 'Rated': rating2}, ignore_index=True)
+        user_rating = user_rating.append({'UserID': 1000, 'MovieID': int(n2), 'Rated': rating2}, ignore_index=True)
         rating3 = request.form.get('rating3')
-        user_rating = user_rating.append({'UserID': 1000, 'MovieID': movieids[2], 'Rated': rating3}, ignore_index=True)
+        user_rating = user_rating.append({'UserID': 1000, 'MovieID': int(n3), 'Rated': rating3}, ignore_index=True)
         rating4 = request.form.get('rating4')
-        user_rating = user_rating.append({'UserID': 1000, 'MovieID': movieids[3], 'Rated': rating4}, ignore_index=True)
+        user_rating = user_rating.append({'UserID': 1000, 'MovieID': int(n4), 'Rated': rating4}, ignore_index=True)
         rating5 = request.form.get('rating5')
-        user_rating = user_rating.append({'UserID': 1000, 'MovieID': movieids[4], 'Rated': rating5}, ignore_index=True)
-        movie_data = pd.merge(movies_data,user_rating, on='MovieID')
-        user_movie_rating = movie_data.pivot_table(index='UserID', columns='Name', values='Rated',aggfunc='first')
+        user_rating = user_rating.append({'UserID': 1000, 'MovieID': int(n5), 'Rated': rating5}, ignore_index=True)
         # MATRIX decomposition
+        movie_data = pd.merge(movies_data,user_rating, on='MovieID') #merge the 2DFs
         matrix_df = user_rating.pivot_table(index='UserID',columns ='MovieID',values='Rated',aggfunc='first').astype(float).fillna(0)  #utility matrix
         R = matrix_df.as_matrix()
         user_ratings_mean = np.mean(R, axis = 1)        #Demeaning the data
@@ -141,6 +150,7 @@ def predit_stuff_matrix():
         U, sigma, Vt = svds(matrix_de_mean, k = 50)    #Singular Value Decomposition
         sigma = np.diag(sigma)                         #Converting into a diagonal matrix
         all_user_predicted_ratings = np.dot(np.dot(U, sigma), Vt) + user_ratings_mean.reshape(-1, 1) #Getting original data
+        user_movie_rating=movie_data.pivot_table(index='UserID',columns='Name',values='Rated',aggfunc='first').astype(float)#utility Matrix
         prediction_df = pd.DataFrame(all_user_predicted_ratings, columns = user_movie_rating.columns) #predictions DF
         def recommend_movies(predictions_df, userID, movies_df, users_ratings_df):
             user_number = userID - 1
