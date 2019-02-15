@@ -24,6 +24,8 @@ $  python app.py
 
 ### 1. Data Extraction
 To extract the IMDB data of the movies, a web scraper was used. For each genre, (action, comedy, drama, sci-fi, animation, thriller) 50 movies were scraped. Movie details (Name, Year of release, Rating, Genre, IMDB_Url, votes) were scraped off the IMDB sort by genre page. Code can be found in [DataExtraction.ipynb](DataExtraction.ipynb).
+Note - TV series is being treated as movies only.
+
 ```
 df = pd.read_csv('imdb.csv')
 df
@@ -116,3 +118,9 @@ For step-by-step explanation, follow comments.
 ### Docker
 
 The DockerFile with the OS Ubuntu 16.04 has been added to the repository.
+
+#### External Resources
+1. https://www.analyticsvidhya.com
+2. https://stackabuse.com
+3. https://stackoverflow.com
+4. https://beckernick.github.io
