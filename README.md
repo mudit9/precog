@@ -23,6 +23,8 @@ $  pip install -r requirements.txt
 $  python app.py
 ```
 
+3. Open localhost:5000
+
 ## Methodology
 
 ### 1. Data Extraction
