@@ -47,6 +47,7 @@ To generate the dummy data for the user ratings, 999 random users were created a
 
 #### IMDB data
 After scraping data for 300 movies in IMDB, duplicate movies were removed. The movies dataset now had 193 unique movies.
+
 ![duplicate](/screenshots/shape.png?raw=true)
 
 
