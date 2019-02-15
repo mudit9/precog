@@ -145,6 +145,9 @@ def predit_stuff_matrix():
         def recommend_movies(predictions_df, userID, movies_df, users_ratings_df):
             user_number = userID - 1
             sorted_predictions = predictions_df.iloc[user_number].sort_values(ascending=False)
+            user_data = user_rating[user_rating.UserID == (1000)]
+            user_full = (user_data.merge(movies_data, how = 'left', left_on = 'MovieID', right_on = 'MovieID')
+             .sort_values(['Rated'], ascending=False)) #find movies watched by new user
             recommendations = (movies_df[~movies_df['MovieID'].isin(user_full['MovieID'])].
                          merge(pd.DataFrame(sorted_predictions).reset_index(), how = 'left').
                          rename(columns = {user_number: 'Predictions'}).

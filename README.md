@@ -27,7 +27,7 @@ df = pd.read_csv('imdb.csv')
 df
 ```
 
-![IMDB](/screenshots/imbd.png?raw=true)
+![IMDB](/screenshots/imdb.png?raw=true)
 
 To generate the dummy data for the user ratings, 999 random users were created and each user gave 20 random movies a random rating out from 1 to 5.
 
@@ -72,15 +72,18 @@ i.e the user-movie[i][j] is the value which the Ith user has given to jth movie.
 Idea: If a person A likes item 1, 2, 3 and B like 2,3,4 then they have similar interests and A should like item 4 and B should like item 1.
 ```
 
-The co-efficient I have used to calculate similarity between 2 vectors is Pearson similarity Co-efficient which is given by the formula:
+The co-efficient I have used to calculate similarity between 2 vectors is Pearson similarity Co-efficient. Pearson correlation coefficient is applicable when the data is not normalised which is good in our case. Pearson correlation co-efficient is calculated from the formula:
 
 ![pearson](/screenshots/pearson.png?raw=true)
 
 Pandas library in python has a builtin function ``corrwith()`` which calculates the pearson correlation between 2 vectors.
 
-### correlation
+Also, to avoid cold-start problem, each new user has to rate at least 5 movies to get a correlation through which another user can be called a similar user.
+
+### Correlation
 
 The Pandas function ``corrwith()`` returns a dataframe of other all other columns with the respective correlation. Had the user-rating dataset been real and with actual ratings of real people, the correlation would be much higher.
+For example:
 
 ![Correlation](/screenshots/correlation.png?raw=true)
 
@@ -105,7 +108,7 @@ For step-by-step explanation, follow comments.
 In Matrix Decomposition using singular value decomposition the formula used is: ``R=UΣV<sup>T</sup>`` where R is the user_rating matrix, U is the user matrix, Σ is the diagonal matrix with singular values and V<sup>T</sup> is the movie matrix.
 For step-by-step explanation, follow comments.
 
-![Matrix Decomposition](/screenshots/MatrixDecomposition?raw=true)
+![Matrix Decomposition](/screenshots/MatrixDecomposition.png?raw=true)
 
 
 ### Docker
