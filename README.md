@@ -99,7 +99,7 @@ For example:
 
 ![Correlation](/screenshots/correlation.png?raw=true)
 
-#### Item-Item
+### Item-Item
 
 In item-item collaborative filtering, we recommend movies which have been rated similarly to the movies which have been rated high by the new user.
 In my approach, if the new user has rated all movies poorly, (s)he'd be recommended movies which have the highest IMDB ratings.
@@ -107,7 +107,7 @@ For step-by-step explanation, follow comments.
 
 ![Item-Item Collaborative filtering](/screenshots/itemitem.png?raw=true)
 
-#### User-user_rating
+### User-user_rating
 
 Here we find users which are alike(based on similarity) and recommend movies which the most similar user to the new user has rated high before.
 First, the most similar user is found out using pearson similarity coefficient and then the top most rated movies of the most similar movies are retrieved. If there is any movie in the recommended movies list which has already been rated by the new user, it is removed from the recommended movies list.
@@ -116,7 +116,7 @@ For step-by-step explanation, follow comments.
 
 ![User-User Collaborative Filtering](/screenshots/useruser.png?raw=true)
 
-#### Matrix Decomposition
+### Matrix Decomposition
 In Matrix Decomposition using singular value decomposition the formula used is: R=UΣV <sup>T</sup> where R is the user_rating matrix, U is the user matrix, Σ is the diagonal matrix with singular values and V<sup>T</sup> is the movie matrix.
 For step-by-step explanation, follow comments.
 
