@@ -1,10 +1,10 @@
 # Movie Recommendation System
-Webapp: https://precog-movierecommender.herokuapp.com/
 
-Technologies used: Flask 0.12.2, Python, pandas, scipy
+The Webapp is deployed on heroku: https://precog-movierecommender.herokuapp.com/
+
+Technologies used: Flask, Python, Pandas, Numpy, Scipy, MongoDB, Docker
 
 ## How to start up app
-
 
 1. Install all dependencies using requirements.txt
 
@@ -75,6 +75,12 @@ The co-efficient I have used to calculate similarity between 2 vectors is Pearso
 
 Pandas library in python has a builtin function ``corrwith()`` which calculates the pearson correlation between 2 vectors.
 
+### correlation
+
+The Pandas function ``corrwith()`` returns a dataframe of other all other columns with the respective correlation. Had the user-rating dataset been real and with actual ratings of real people, the correlation would be much higher.
+
+![Correlation](/screenshots/correlation.png?raw=true)
+
 #### Item-Item
 
 In item-item collaborative filtering, we recommend movies which have been rated similarly to the movies which have been rated high by the new user.
@@ -85,9 +91,20 @@ For step-by-step explanation, follow comments.
 
 #### User-user_rating
 
-Here we find users which are alike(based on similarity) and recommend movies which the new user's look alike has rated high in past.
+Here we find users which are alike(based on similarity) and recommend movies which the most similar user to the new user has rated high before.
 First, the most similar user is found out using pearson similarity coefficient and then the top most rated movies of the most similar movies are retrieved. If there is any movie in the recommended movies list which has already been rated by the new user, it is removed from the recommended movies list.
+For step-by-step explanation, follow comments.
 
-![User-User Collaborative Filtering](/screenshots/user_user.png?raw=true)
+
+![User-User Collaborative Filtering](/screenshots/useruser.png?raw=true)
 
 #### Matrix Decomposition
+In Matrix Decomposition using singular value decomposition the formula used is: ``R=UΣV<sup>T</sup>`` where R is the user_rating matrix, U is the user matrix, Σ is the diagonal matrix with singular values and V<sup>T</sup> is the movie matrix.
+For step-by-step explanation, follow comments.
+
+![Matrix Decomposition](/screenshots/MatrixDecomposition?raw=true)
+
+
+### Docker
+
+The DockerFile with the OS Ubuntu 16.04 has been added to the repository.
