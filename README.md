@@ -26,6 +26,7 @@ To extract the IMDB data of the movies, a web scraper was used. For each genre, 
 df = pd.read_csv('imdb.csv')
 df
 ```
+
 ![IMDB](/screenshots/imbd.png?raw=true)
 
 To generate the dummy data for the user ratings, 999 random users were created and each user gave 20 random movies a random rating out from 1 to 5.
@@ -53,13 +54,15 @@ Tuples where a user has rated the same movie twice or more than twice were remov
 
 #### Movie-User Data
 
-A dataframe where all the movies are on the x axis and all the users on the y axis and each column represents the movies vector i.e the movie-user[i][j] is the value which the Ith user has given to jth movie.
+A dataframe where all the movies are on the x axis and all the users on the y axis and each column represents the movies vector i.e the movie-user[i][j] is the value which the jth user has given to ith movie.
 
 ![User-Movie Data](/screenshots/userUser_matrixUtlity.png?raw=true)
 
 #### User-Movie Data
 
-A dataframe where all the users are on the x axis and all the movies on the y axis and each column represents the user vector i.e the movie-user[i][j] is the value which the jth user has given to ith movie.
+A dataframe where all the users are on the x axis and all the movies on the y axis and each column represents the user vector
+i.e the user-movie[i][j] is the value which the Ith user has given to jth movie.
+
 
 ![Movie-User Data](/screenshots/movie_user.png?raw=true)
 
