@@ -107,7 +107,7 @@ For step-by-step explanation, follow comments.
 ![User-User Collaborative Filtering](/screenshots/useruser.png?raw=true)
 
 #### Matrix Decomposition
-In Matrix Decomposition using singular value decomposition the formula used is: ``R=UΣV<sup>T</sup>`` where R is the user_rating matrix, U is the user matrix, Σ is the diagonal matrix with singular values and V<sup>T</sup> is the movie matrix.
+In Matrix Decomposition using singular value decomposition the formula used is: R=UΣV <sup>T</sup> where R is the user_rating matrix, U is the user matrix, Σ is the diagonal matrix with singular values and V<sup>T</sup> is the movie matrix.
 For step-by-step explanation, follow comments.
 
 ![Matrix Decomposition](/screenshots/MatrixDecomposition.png?raw=true)
