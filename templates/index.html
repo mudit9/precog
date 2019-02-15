@@ -14,13 +14,8 @@
     <div class="jumbotron text-center">
       <h1>Enter movie ratings: </h1>
     </div>
-
-    <br><br>
-
     <form class = "container" method="POST">
         <div class="form-group">
-
-        <br>
         <label for="rating1">Rating for {{pred1}}</label>
         <select id="rating1" name="rating1">
           <option value=1>1</option>
@@ -81,8 +76,6 @@
           <option value={{name5}} selected="selected">name5</option>
         </select>
           <br>
-          <br>
-          <br>
           <div class = "well">
         <input class="btn btn-info" type="submit" formaction="/get-user-data-item" value="Get item-item recommendation">
         <br>
@@ -94,6 +87,15 @@
         </div>
         </div>
         </form>
+        <div>
+            <h4> All the movies: </h4>
+              <p>
+                {% for movie in movies %}
+                  {{ movie }} ,
+                {% endfor %}
+            </p>
+
+        </div>
   </div>
 </body>
 

@@ -20,13 +20,14 @@ user_rating = pd.read_csv('User_rating.csv')
 
 @app.route("/",methods=['GET'])
 def index():
+    movies = list(movies_data['Name'])
     a[:] = []
     movieids[:] = []
     for i in range(0,5):
         movieid = randint(1,193)
         movieids.append(movieid)
         a.append(movies_data.loc[movies_data['MovieID'] == movieid,['Name']].iloc[0]['Name'])
-    return render_template("index.html",pred1 = a[0],pred2 = a[1],pred3 = a[2],pred4= a[3],pred5= a[4],name1 = movieids[0],name2 = movieids[1],name3 = movieids[2],name4 = movieids[3],name5 = movieids[4])
+    return render_template("index.html",movies = movies,pred1 = a[0],pred2 = a[1],pred3 = a[2],pred4= a[3],pred5= a[4],name1 = movieids[0],name2 = movieids[1],name3 = movieids[2],name4 = movieids[3],name5 = movieids[4])
 
 @app.route('/get-user-data-item', methods=['POST'])
 def predict_stuff_user():
