@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
 
-<body bgcolor="222222">
+<body>
   <div class="container">
     <div class="jumbotron text-center">
       <h1>Enter movie ratings:  </h1>
@@ -88,13 +88,12 @@
         </div>
         </form>
         <div>
-            <h4> All the movies: </h4>
+            <h4> All movies: </h4>
               <p>
                 {% for movie in movies %}
                   {{ movie }} ,
                 {% endfor %}
             </p>
-
         </div>
   </div>
 </body>

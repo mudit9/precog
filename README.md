@@ -1,4 +1,4 @@
-# Movie Recommendation System
+# Movie Recommender System
 
 Precog task by - Mudit Saxena (Shiv Nadar University)
 
@@ -9,7 +9,7 @@ Technologies used: Flask, Python, Pandas, Numpy, Scipy, MongoDB, Docker
 ![heroku](/screenshots/heroku.png?raw=true)
 
 
-## How to start up app
+## Start App
 
 1. Install all dependencies using requirements.txt
 
@@ -106,7 +106,7 @@ For step-by-step explanation, follow comments.
 
 ![Item-Item Collaborative filtering](/screenshots/itemitem.png?raw=true)
 
-### User-User 
+### User-User
 
 Here we find users which are alike(based on similarity) and recommend movies which the most similar user to the new user has rated high before.
 First, the most similar user is found out using pearson similarity coefficient and then the top most rated movies of the most similar movies are retrieved. If there is any movie in the recommended movies list which has already been rated by the new user, it is removed from the recommended movies list.
