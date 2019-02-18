@@ -30,6 +30,8 @@ $  python app.py
 ### 1. Data Extraction
 To extract the IMDB data of the movies, a web scraper was used. For each genre, (action, comedy, drama, sci-fi, animation, thriller) 50 movies were scraped. Movie details (Name, Year of release, Rating, Genre, IMDB_Url, votes) were scraped off the IMDB sort by genre page. Code can be found in [DataExtraction.ipynb](/py_notebooks/DataExtraction.ipynb)
 
+After adding each genre from the list ``'action','comedy','drama','sci-fi','animation','thriller'`` to the url ``http://www.imdb.com/search/title?genres=``, details about 50 movies for each corresponding genre are scraped.
+
 Note - TV series are being treated as movies only.
 
 ```
