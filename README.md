@@ -122,7 +122,7 @@ For step-by-step explanation, follow comments.
 In Matrix Decomposition using singular value decomposition the formula used is: R=UΣV <sup>T</sup> where R is the user_rating matrix, U is the user matrix, Σ is the diagonal matrix with singular values and V<sup>T</sup> is the movie matrix.
 For step-by-step explanation, follow comments.
 
-![Matrix Decomposition](/screenshots/matrixdecomposition.png?raw=true)
+![Matrix Decomposition](/screenshots/MatrixDecomposition.png?raw=true)
 
 
 ### 4. Docker
